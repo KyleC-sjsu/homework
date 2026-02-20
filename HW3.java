@@ -36,6 +36,20 @@ public class HW3 {
             heapify(arr, n, largest);
         }
     }
+
+    // Build max heap from input array
+    static void buildMaxHeap(WordFreq arr[]) {
+        int n = arr.length;
+
+        // Index of the last non-leaf node
+        int startIndex = (n / 2) - 1;
+
+        // Heapify from startIndex until the array is fully traversed
+        for (int i = startIndex; i >= 0; i--) {
+            heapify(arr, n, i);
+        }
+    }
+    
     public static void main(String[] args) {
         // Create an array of WordFreq objects
         WordFreq wordFreqArr[] = {
