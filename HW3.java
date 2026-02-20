@@ -11,6 +11,31 @@ class WordFreq {
 }
 
 public class HW3 {
+    static void heapify(WordFreq arr[], int n, int root) {
+        // Initialize key nodes
+        int largest = root;
+        int left = 2 * root + 1;
+        int right = 2 * root + 2;
+
+        // Check if left child is larger than root
+        if (left < n && arr[left].frequency > arr[largest].frequency) {
+            largest = left;
+        }
+
+        // Check if right child is larger than root
+        if (right < n && arr[right].frequency > arr[largest].frequency) {
+            largest = right;
+        }
+
+        // If the largest isn't the root, recursively heapify sub-trees
+        if (largest != root) {
+            WordFreq temp = arr[root];
+            arr[root] = arr[largest];
+            arr[largest] = temp;
+
+            heapify(arr, n, largest);
+        }
+    }
     public static void main(String[] args) {
         // Create an array of WordFreq objects
         WordFreq wordFreqArr[] = {
