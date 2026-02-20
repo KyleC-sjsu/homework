@@ -8,9 +8,17 @@ class WordFreq {
         this.word = word;
         this.frequency = frequency;
     }
+
+    // To string method
+    public String toString() {
+        String output = "Word: " + word + "\n";
+        output += "Frequency: " + frequency + "\n";
+        return output;
+    }
 }
 
 public class HW3 {
+    // Create heapify for subtrees
     static void heapify(WordFreq arr[], int n, int root) {
         // Initialize key nodes
         int largest = root;
@@ -49,7 +57,7 @@ public class HW3 {
             heapify(arr, n, i);
         }
     }
-    
+
     public static void main(String[] args) {
         // Create an array of WordFreq objects
         WordFreq wordFreqArr[] = {
@@ -64,5 +72,11 @@ public class HW3 {
             new WordFreq("would recommend to friends", 800),
             new WordFreq("visit the store", 700)
         };
+
+        // Run the function, then print it out to show order
+        buildMaxHeap(wordFreqArr);
+        for (int i = 0; i < wordFreqArr.length; i++) {
+            System.out.println(wordFreqArr[i].toString());
+        }
     }
 }
