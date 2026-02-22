@@ -133,7 +133,7 @@ public class HW4 {
     }
     public static void main(String[] args) {
         // Do main method requirements
-        System.out.println("Assigment 1: ");
+        System.out.println("Assignment 1: ");
         Node head = null;
 
         // Insertions
